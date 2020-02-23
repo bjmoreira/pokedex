@@ -23,7 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data['url'] = env('APP_URL');
+        return view('home',$data);
     }
 
     /**
@@ -33,7 +34,8 @@ class HomeController extends Controller
      */
     public function capturados()
     {
-        return view('capturados');
+        $data['url'] = env('APP_URL');
+        return view('capturados',$data);
     }
 
 }

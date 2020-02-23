@@ -29,5 +29,13 @@ Route::group(['prefix' => 'pokemon'], function () {
   Route::get('/', 'PokemonController@list')->name('list');
 
 
+  Route::group(['prefix' => 'captured'], function () {
+
+    Route::get('/', 'CapturedController@list')->name('list');
+    Route::post('/', 'CapturedController@insert')->name('insert');
+    Route::put('/', 'CapturedController@update')->name('update');
+
+  });
+
 
 });

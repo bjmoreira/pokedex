@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+
   <div id="content">
 
     <!-- Begin Page Content -->
@@ -21,17 +23,11 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
-                  <th>Name</th>
-
+                  <th>Imagem</th>
+                  <th>Nome</th>
+                  <th>Tipo</th>
                 </tr>
-              </thead>
-              <tfoot>
-                <tr>
-                  <th>Name</th>
-
-                </tr>
-              </tfoot>
-              
+              </thead>              
             </table>
           </div>
         </div>
@@ -42,6 +38,10 @@
 
     <!-- Page level custom scripts -->
     <script src="{{ asset('js/datatables-home.js') }}"></script>
+
+
+    @include('_details')
+
 
   </div>
 @endsection
