@@ -17,7 +17,7 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show the application index.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -25,4 +25,15 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    /**
+     * Show the application index.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function capturados()
+    {
+        return view('capturados');
+    }
+
 }
