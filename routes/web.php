@@ -20,3 +20,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/capturados', 'HomeController@capturados')->name('capturados');
+
+
+Route::group(['prefix' => 'pokemon'], function () {
+
+
+
+  Route::get('/', 'PokemonController@list')->name('list');
+
+
+
+});

@@ -13,6 +13,10 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+
+        /**
+         * Usuario Admin.
+         */
         factory(User::class)->create([
             'name'  => 'Admin',
             'email' => 'admin@admin.com',
@@ -22,11 +26,12 @@ class UsersTableSeeder extends Seeder
         factory(App\User::class, 9)->create()->each(function ($user) {
           $user->save();
         });
+
     }
 
     public function down()
     {
-        Schema::drop('user');
+        Schema::drop('users');
     }
 
 }
