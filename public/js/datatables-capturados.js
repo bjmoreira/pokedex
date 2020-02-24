@@ -48,6 +48,7 @@ function modalShow(nickname,level,detail_note,id,name,type,height,weight,base_ex
 function modalClose() 
 {
   document.getElementById('modal').style.display = 'none';
+  $('#message').text('');
 }
 
 function atualizar() 
@@ -70,7 +71,7 @@ function atualizar()
     }).done(function (data) {
 
       initDataTables();
-      $('#message').text('Atualizado!   ');
+      $('#message').text('Atualizado!');
 
     });
 

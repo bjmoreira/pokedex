@@ -21,61 +21,67 @@
                 
                 <div class="modal-body">
 
-                        <div class="form-group">
-                            <label for="cnpj" class="col-md-3 control-label">Nome</label>
-                            <div class="col-md-7">
+                        <div class="row">
+                            <div class="col">
+                            <label  class="control-label">Nome</label>
                                 <input type="text" name="name" id="name" value="" readonly class="form-control">
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="cnpj" class="col-md-3 control-label">Nickname</label>
-                            <div class="col-md-7">
+                            <div class="col">
+                            <label  class="control-label">Nickname</label>
                                 <input type="text" name="nickname" id="nickname" value="" class="form-control" autofocus>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="cnpj" class="col-md-3 control-label">Nível</label>
-                            <div class="col-md-7">
+                        <div class="row">&nbsp;</div>
+
+                        <div class="row">
+                            <div class="col">
+                                <label  class="col-md-2 control-label" style="width:40%;">Nível</label>
                                 <input type="text" name="level" id="level" value="" class="form-control" autofocus>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="cnpj" class="col-md-4 control-label">Detalhes / Notas</label>
-                            <div class="col-md-7">
-                                <input type="text" name="detail_note" id="detail_note" value="" class="form-control" autofocus>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="cnpj" class="col-md-3 control-label">Tipo</label>
-                            <div class="col-md-7">
+                            <div class="col">
+                                <label  class="col-md-3 control-label">Tipo</label>
                                 <input type="text" name="type" id="type" value="" readonly class="form-control">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="cnpj" class="col-md-3 control-label">Altura</label>
-                            <div class="col-md-7">
+                        <div class="row">&nbsp;</div>
+
+                        <div class="row">
+                            <div class="col">
+                                <label  class="col-md-3 control-label">Altura</label>
                                 <input type="text" name="height" id="height" value="" readonly class="form-control">
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="cnpj" class="col-md-3 control-label">Peso</label>
-                            <div class="col-md-7">
+                            <div class="col">
+                                <label  class="col-md-3 control-label">Peso</label>
                                 <input type="text" name="weight" id="weight" value="" readonly class="form-control">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="cnpj" class="col-md-4 control-label">Experiência Base</label>
-                            <div class="col-md-7">
+                        <div class="row">&nbsp;</div>
+
+                        <div class="row">
+                            <div class="col">
+                                <label  class="col-md-4 control-label">Experiência Base</label>
                                 <input type="text" name="base_experience" id="base_experience" value="" readonly class="form-control">
                             </div>
+                            
                         </div>
-                        <div class="form-group">
-                            <label for="cnpj" class="col-md-4 control-label">Evolução</label>
-                            <div class="col-md-7">
-                                <img src='' id="image_evolution" />
-                                <span id="name_evolution">teste</span>
+                        <div class="row">&nbsp;</div>
+
+                        <div class="row">
+                            <div class="col">
+                            <label  class="col-md-4 control-label">Detalhes / Notas</label>
+                            <input type="text" name="detail_note" id="detail_note" value="" class="form-control" autofocus>
+                            </div>
+                            
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                            <label class="col-md-4 control-label">Evolução</label>
+                            <img src='' id="image_evolution" />
+                                        <span id="name_evolution"></span>
                             </div>
                         </div>
+                        <div class="row">&nbsp;</div>
 
                 </div>
 
