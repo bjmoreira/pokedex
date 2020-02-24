@@ -18,10 +18,10 @@ class CapturedController extends Controller
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
 
 
@@ -44,7 +44,7 @@ class CapturedController extends Controller
             foreach($captured as $data)
             {
 
-                $response = $client->request('GET', "pokemon/".$data->id."/");
+                $response = $client->request('GET', "pokemon/".$data->id_pokemon."/");
                 $details = (string) $response->getBody();
 
                 $details_arr = json_decode($details, true);
@@ -57,7 +57,6 @@ class CapturedController extends Controller
                     "level" => $data->level,
                     "detail_note" => $data->detail_note,
                     'name' => $details_arr['name'],
-                    'id' => $details_arr['id'],
                     'type' => $details_arr['types']['0']['type']['name'],
                     'image' => $details_arr['sprites']['front_default'],
                     'height' => $details_arr['height'],
@@ -83,18 +82,51 @@ class CapturedController extends Controller
     }
 
 
-    
-    public function listForId($id)
+    /**
+     * Função que traz a evolução do pokemon, a mesma está incompleta não tive tempo para terminar
+     *
+     * @return $listPokemons
+     */
+    public function listEvolution($idPokemon)
     {
 
         try 
         {
 
-            $data = CapturedRepository::listarPorId($id);
+            $client = new Client(['base_uri' => 'https://pokeapi.co/api/v2/',
+            'http_errors' => false
+            ]);
+            $response = $client->request('GET', "pokemon/".$idPokemon."/");
+            $details = (string) $response->getBody();
+            $details_arr = json_decode($details, true);
+
+            $client2 = new Client(['base_uri' => $details_arr['species']['url'],
+            'http_errors' => false
+            ]);
+            $response2 = $client2->request('GET', "");
+            $details2 = (string) $response2->getBody();
+            $details_arr2 = json_decode($details2, true);
+
+            $client3 = new Client(['base_uri' => $details_arr2['evolution_chain']['url'],
+            'http_errors' => false
+            ]);
+            $response3 = $client3->request('GET', "");
+            $details3 = (string) $response3->getBody();
+            $details_arr3 = json_decode($details3, true);
+
+            $response4 = $client->request('GET', "pokemon/".$details_arr3['chain']['evolves_to'][0]['species']['name']."/");
+            $details4 = (string) $response4->getBody();
+            $details_arr4 = json_decode($details4, true);
+
+            $listPokemons[] = [
+                'name' => $details_arr3['chain']['evolves_to'][0]['species']['name'],
+                'image' => $details_arr4['sprites']['front_default'],
+            ];
+
             $status = '200';
             $message = "Registro listado com sucesso!";
             $success = 'true';
-            return ResponseBuilder::result($success,$status,$message,$data);
+            return ResponseBuilder::result($success,$status,$message,$listPokemons);
 
         }
         catch (\Exception $e) 
@@ -115,7 +147,7 @@ class CapturedController extends Controller
         {
 
             $data = CapturedRepository::insert($request);
-            $status = '200';
+            $status = '201';
             $message = "Registro inserido com sucesso!";
             $success = 'true';
             return ResponseBuilder::result($success,$status,$message,$data);
@@ -132,15 +164,39 @@ class CapturedController extends Controller
 
 
 
-    public function update($params)
+    public function update(Request $request)
     {
 
         try 
         {
 
-            $data = CapturedRepository::update($params);
+            $data = CapturedRepository::update($request);
             $status = '200';
             $message = "Registro atualizado com sucesso!";
+            $success = 'true';
+            return ResponseBuilder::result($success,$status,$message,$data);
+
+        }
+        catch (\Exception $e) 
+        {
+            
+            return ResponseBuilder::result('false','500',$e->getMessage());
+
+        }
+
+    }
+
+
+
+    public function delete(Request $request)
+    {
+
+        try 
+        {
+
+            $data = CapturedRepository::delete($request);
+            $status = '202';
+            $message = "Registro excluido com sucesso!";
             $success = 'true';
             return ResponseBuilder::result($success,$status,$message,$data);
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -24,6 +25,8 @@ class HomeController extends Controller
     public function index()
     {
         $data['url'] = env('APP_URL');
+        $data['id_user'] = Auth::user()->id;
+
         return view('home',$data);
     }
 
@@ -35,6 +38,8 @@ class HomeController extends Controller
     public function capturados()
     {
         $data['url'] = env('APP_URL');
+        $data['id_user'] = Auth::user()->id;
+
         return view('capturados',$data);
     }
 

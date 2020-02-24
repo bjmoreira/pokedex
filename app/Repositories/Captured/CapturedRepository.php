@@ -27,39 +27,15 @@ class CapturedRepository implements CapturedInterface
     }
 
 
-
-    public static function listForId($id)
-    {
-
-        $captured = Captured::select(
-            [
-                'id',
-                'id_user',
-                'id_pokemon',
-                'nickname',
-                'level',
-                'detail_note'
-            ]);
-            
-        $captured->where('id', $id);
-
-        return $captured->get();
-            
-    }
-
-
-
     public static function insert($params){
 
         $captured = new Captured;
 
-        $captured->intermediador  = $params->intermediador;
-        $captured->plataforma     = $params->plataforma;
-        $captured->situacao       = $params->situacao;
-        $captured->liaceito       = $params->liaceito;
-        $captured->corretor       = $params->corretor;
-        $captured->empresa        = $params->empresa;
-        $captured->cargo          = $params->cargo;
+        $captured->id_user      = $params->id_user;
+        $captured->id_pokemon   = $params->id_pokemon;
+        $captured->nickname     = $params->nickname;
+        $captured->level        = $params->level;
+        $captured->detail_note  = $params->detail_note;
 
         $captured->save();
 
@@ -71,13 +47,27 @@ class CapturedRepository implements CapturedInterface
 
     public static function update($params){
 
-        $captured = Captured::find($params->membro);
+        $captured = Captured::find($params->id);
         
-        $captured->situacao   = $params->situacao;
+        $captured->nickname     = $params->nickname;
+        $captured->level        = $params->level;
+        $captured->detail_note  = $params->detail_note;
 
         $captured->save();
 
         return $captured;
+
+    }
+
+
+
+    public static function delete($params){
+
+        $captured = Captured::find($params->id);
+        
+        $captured->delete();
+
+        return '';
 
     }
 

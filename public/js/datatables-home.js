@@ -23,8 +23,20 @@ function modalClose()
 function incluiCapturado() 
 {
 
-  alert('Capturado');
-  //document.getElementById('modal').style.display = 'none';
+  var id_pokemon = $('#id').val();
+  
+  $.ajax({
+    type: 'POST',
+    url: url + '/pokemon/captured',
+    data: {
+            id_user: id_user,
+            id_pokemon: id_pokemon,
+          }
+    }).done(function (data) {
+
+      $('#message').text('Incluido em capturados!   ');
+
+    });
 
 }
 

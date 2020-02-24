@@ -56,8 +56,9 @@
 
                 <div class="modal-footer">
 
+                        <h6 class="modal-title"><span class="text-danger" id="message"></span></h6>
 
-                        <button id="submit" name="submit" class="btn btn-default" onclick="incluiCapturado()">
+                        <button id="submit" name="submit" class="btn text-primary" onclick="incluiCapturado()">
                             Adicionar como capturado
                         </button>
 

@@ -34,6 +34,14 @@ Route::group(['prefix' => 'pokemon'], function () {
     Route::get('/', 'CapturedController@list')->name('list');
     Route::post('/', 'CapturedController@insert')->name('insert');
     Route::put('/', 'CapturedController@update')->name('update');
+    Route::delete('/', 'CapturedController@delete')->name('delete');
+
+  });
+
+
+  Route::group(['prefix' => 'evolution-chain'], function () {
+
+    Route::get('/{idPokemon}', 'CapturedController@listEvolution')->name('listEvolution');
 
   });
 

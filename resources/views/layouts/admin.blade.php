@@ -124,7 +124,14 @@
 
 
         <!-- APPURL -->
-        <script> var url = '{{ $url }}'; </script>
+        <script> 
+        
+        var url = '{{ $url }}'; 
+
+        var id_user = '{{ $id_user }}';
+        
+        
+        </script>
 
         <!-- Begin Page Content -->
         @yield('content')

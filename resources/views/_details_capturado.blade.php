@@ -24,31 +24,56 @@
                         <div class="form-group">
                             <label for="cnpj" class="col-md-3 control-label">Nome</label>
                             <div class="col-md-7">
-                                <input type="text" name="name" id="name" value="" readonly class="form-control" autofocus>
+                                <input type="text" name="name" id="name" value="" readonly class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cnpj" class="col-md-3 control-label">Nickname</label>
+                            <div class="col-md-7">
+                                <input type="text" name="nickname" id="nickname" value="" class="form-control" autofocus>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cnpj" class="col-md-3 control-label">Nível</label>
+                            <div class="col-md-7">
+                                <input type="text" name="level" id="level" value="" class="form-control" autofocus>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cnpj" class="col-md-4 control-label">Detalhes / Notas</label>
+                            <div class="col-md-7">
+                                <input type="text" name="detail_note" id="detail_note" value="" class="form-control" autofocus>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="cnpj" class="col-md-3 control-label">Tipo</label>
                             <div class="col-md-7">
-                                <input type="text" name="type" id="type" value="" readonly class="form-control" autofocus>
+                                <input type="text" name="type" id="type" value="" readonly class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="cnpj" class="col-md-3 control-label">Altura</label>
                             <div class="col-md-7">
-                                <input type="text" name="height" id="height" value="" readonly class="form-control" autofocus>
+                                <input type="text" name="height" id="height" value="" readonly class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="cnpj" class="col-md-3 control-label">Peso</label>
                             <div class="col-md-7">
-                                <input type="text" name="weight" id="weight" value="" readonly class="form-control" autofocus>
+                                <input type="text" name="weight" id="weight" value="" readonly class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="cnpj" class="col-md-4 control-label">Experiência Base</label>
                             <div class="col-md-7">
-                                <input type="text" name="base_experience" id="base_experience" value="" readonly class="form-control" autofocus>
+                                <input type="text" name="base_experience" id="base_experience" value="" readonly class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cnpj" class="col-md-4 control-label">Evolução</label>
+                            <div class="col-md-7">
+                                <img src='' id="image_evolution" />
+                                <span id="name_evolution">teste</span>
                             </div>
                         </div>
 
@@ -56,9 +81,10 @@
 
                 <div class="modal-footer">
 
+                        <h6 class="modal-title"><span class="text-info" id="message"></span></h6>
 
-                        <button id="submit" name="submit" class="btn btn-default" onclick="incluiCapturado()">
-                            Adicionar como capturado
+                        <button id="submit" name="submit" class="btn text-primary" onclick="atualizar()">
+                            Atualizar
                         </button>
 
                 </div>

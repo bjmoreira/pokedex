@@ -22,6 +22,7 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
+                  <th></th>
                   <th>Imagem</th>
                   <th>Nome</th>
                   <th>Nickname</th>
