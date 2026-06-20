@@ -1,5 +1,9 @@
-* text=auto
-*.css linguist-vendored
-*.scss linguist-vendored
-*.js linguist-vendored
-CHANGELOG.md export-ignore
+# EN: Normalize line endings. Shell scripts must stay LF for Linux containers.
+# PT: Normaliza fins de linha. Scripts shell devem permanecer LF para containers Linux.
+* text=auto eol=lf
+*.sh text eol=lf
+*.bat text eol=crlf
+*.png binary
+*.jpg binary
+*.ico binary
+*.svg text
