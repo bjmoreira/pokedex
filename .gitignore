@@ -1,12 +1,6 @@
-/node_modules
-/public/hot
-/public/storage
-/storage/*.key
-/vendor
-.env
-.env.backup
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
+# EN: Root ignore - per-project ignores live in backend/ and frontend/.
+# PT: Ignore da raiz - ignores por projeto ficam em backend/ e frontend/.
+.idea
+.vscode
+.DS_Store
+*.log
